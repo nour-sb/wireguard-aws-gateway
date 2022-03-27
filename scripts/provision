@@ -4,8 +4,8 @@ set -e
 
 pushd terraform
 
-terraform init
+terraform init -input=false
 terraform fmt
-terraform apply
+terraform apply -input=false -auto-approve
 
 popd
