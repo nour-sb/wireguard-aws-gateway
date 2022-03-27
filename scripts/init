@@ -35,6 +35,8 @@ fi
 
 if [ ! -f $tf_vars ]; then
   echo "Creating Terraform variables file: $tf_vars"
+  echo $AWS_ACCESS_KEY
+  echo $AWS_SECRET_KEY
   cat ./terraform/terraform.tfvars.example \
     | sed "s/PUT_ACCESS_KEY/${ AWS_ACCESS_KEY }/g" \
     | sed "s/PUT_SECRET_KEY/${ AWS_SECRET_KEY }/g" \
