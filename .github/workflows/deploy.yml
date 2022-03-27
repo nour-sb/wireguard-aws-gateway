@@ -25,6 +25,7 @@ jobs:
       
       # Runs a single command using the runners shell
       - name: Setup the linux environment
+        
         run: |
           sudo apt update
           sudo apt install -y gnupg software-properties-common curl
@@ -37,9 +38,10 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
-          AWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_KEY=${{ secrets.AWS_SECRET_KEY_ID }}
-          cat $AWS_SECRET_KEY
+          env:
+            AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY_ID }}
+            AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_KEY_ID }}
+          cat $AWS_ACCESS_KEY
           cat $AWS_SECRET_KEY
           ./scripts/init
           ./scripts/provision
