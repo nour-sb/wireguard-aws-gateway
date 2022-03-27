@@ -35,7 +35,11 @@ fi
 
 if [ ! -f $tf_vars ]; then
   echo "Creating Terraform variables file: $tf_vars"
-  cat ./terraform/terraform.tfvars.example > $tf_vars
+  cat ./terraform/terraform.tfvars.example \
+    | sed "s/PUT_ACCESS_KEY/${{ secrets.AWS_ACCESS_KEY_ID }}/g" \
+    | sed "s/PUT_SECRET_KEY/${{ secrets.AWS_ACCESS_KEY_ID }}/g" \
+   > $tf_vars
+   cat $tf_vars
 else
   echo "Terraform vars file already exists, skipping"
 fi
