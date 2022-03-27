@@ -41,9 +41,11 @@ jobs:
           AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
           AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_KEY }}
         run: |
-          cat $AWS_ACCESS_KEY
-          cat $AWS_SECRET_KEY
+          echo "Running init -----------"
           ./scripts/init
+          echo "Running provision -----------"
           ./scripts/provision
+          echo "Running configure -----------"
           ./scripts/configure
+          echo "Running client-config -----------"
           ./scripts/client-config
