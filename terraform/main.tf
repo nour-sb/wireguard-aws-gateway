@@ -6,6 +6,10 @@ module "vpc_main" {
   public_subnets       = var.vpc_public_subnets
   azs                  = ["us-east-1a", "us-east-1b", "us-east-1c"]
   enable_dns_hostnames = true
+
+  tags = {
+    Name : "wireguard"
+  }
 }
 
 resource "aws_key_pair" "wireguard" {
@@ -26,6 +30,10 @@ resource "aws_instance" "wireguard" {
 
   lifecycle {
     ignore_changes = [ami]
+  }
+
+  tags = {
+    Name : "wireguard"
   }
 }
 
@@ -74,5 +82,9 @@ resource "aws_security_group" "wireguard" {
     to_port     = 0
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  tags = {
+    Name : "wireguard"
   }
 }
