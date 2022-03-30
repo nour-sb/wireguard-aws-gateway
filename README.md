@@ -46,7 +46,7 @@ This demo repository has a few defaults:
 | Name | Value | Description
 |------|-------|--------------
 | Wireguard CIDR | `10.10.0.0/24` | VPN network range
-| AWS Region | `us-east-1` | AWS Region
+| AWS Region | `ap-southeast-1` | AWS Region
 | AWS CIDR | `10.0.0.0/16` | AWS VPC network range
 
 ## Usage
@@ -98,7 +98,7 @@ All required configuration has already been created for us by the init script, l
 ```hcl
 aws_access_key        = "XXX"
 aws_secret_key        = "XXX"
-region                = "us-east-1"
+region                = "ap-southeast-1"
 vpc_cidr              = "10.0.0.0/16"
 vpc_public_subnets    = ["10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24"]
 gateway_network       = "10.10.0.0/24"

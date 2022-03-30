@@ -4,7 +4,7 @@ variable "aws_secret_key" {}
 
 // AWS Region where we're deploying the gateway.
 variable "region" {
-  default = "us-east-1"
+  default = "ap-southeast-1"
 }
 
 // Primary CIDR for the gateway.
