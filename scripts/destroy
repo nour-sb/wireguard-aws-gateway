@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 set -e
+tf_vars="./terraform/terraform.tfvars"
 
 if [ ! -f $tf_vars ]; then
   echo "Creating Terraform variables file: $tf_vars"
@@ -15,5 +16,6 @@ fi
 
 pushd ./terraform
 terraform init -input=false
+terraform fmt
 terraform destroy
 popd
