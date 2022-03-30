@@ -17,5 +17,5 @@ fi
 pushd ./terraform
 terraform init -input=false
 terraform fmt
-terraform destroy
+terraform destroy -input=false
 popd
