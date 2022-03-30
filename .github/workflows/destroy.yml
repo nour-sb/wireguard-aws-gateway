@@ -22,9 +22,12 @@ jobs:
       
       # Runs a single command using the runners shell
       - name: Running Terraform Destroy command
-        
+        env:
+          AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
+          AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_KEY }}
         run: |
           echo "Running init -----------"
+          ./scripts/init
           pushd terraform
           terraform init -input=false
           popd
