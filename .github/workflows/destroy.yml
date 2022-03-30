@@ -25,6 +25,8 @@ jobs:
         
         run: |
           echo "Running init -----------"
+          pushd terraform
           terraform init -input=false
+          popd
           echo "Running destroy -----------"
           ./scripts/destroy
