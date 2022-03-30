@@ -22,7 +22,7 @@ else
   echo "Ansible hosts already created, skipping"
 fi
 
-echo "running aws ec2 wait instance-running --filters Name=ip-address,Values=$($gateway_ip)"
+echo "running aws ec2 wait instance-running --filters Name=ip-address,Values=${gateway_ip}"
 aws ec2 wait instance-running --filters Name=ip-address,Values=${gateway_ip}
 
 pushd ansible
