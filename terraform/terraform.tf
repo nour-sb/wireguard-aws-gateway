@@ -1,7 +1,7 @@
 terraform {
   required_version = "~> 1.0"
   backend "s3" {
-    bucket = "terraform"
+    bucket = "nour-terraform"
     key    = "wireguard"
     region = "ap-southeast-1"
   }
