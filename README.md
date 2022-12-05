@@ -238,4 +238,4 @@ Activate your Wireguard VPN connection. Now, let's verify private IP access / DN
 
 All the steps above should be successful and should always return the same ip: `10.0.x.x`. If you happen to have any other resources in your VPC, you can ping them (or resolve their names) similarly.
 
-The script also verified that accessing domain records like `user1.private` works. Those will resolve to an address in the VPN range, like `10.10.0.1`.
+The script also verified that accessing domain records like `user1.private` works. Those will resolve to an address in the VPN range, like `10.10.0.1`.f
